@@ -1,0 +1,93 @@
+hmtl {
+	min-width: 320px;
+	max-width: 1024px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 1rem; /* 16px */
+	font-weight: 400;
+	line-height: 1.6;
+	letter-spacing: 0.01em;
+	margin: 0 auto;
+	scroll-behavior: smooth;
+}
+
+body {
+	width: 100%;
+}
+
+.header-container,
+.footer-container {
+	width: 100%;
+	padding: 0.7em;
+	color: white;
+	background-color: rgb(227, 79, 63);
+	max-height: 5svh;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo img {
+	width: 5em;
+	background-color: aliceblue;
+	padding: 0.1em 0.5em;
+	border-radius: 0.5em;
+}
+.nav-container ul {
+	display: flex;
+}
+
+.nav-container ul li {
+	margin: 0 1em;
+}
+
+.main-container {
+	width: 100%;
+	min-height: 90svh;
+	padding: 0.7em;
+	color: black;
+	background-color: white;
+}
+
+h1.title {
+	text-align: center;
+	font-size: clamp(1.8rem, 5vw, 3rem);
+	font-weight: 700;
+	margin-top: 1.8rem;
+}
+
+.img-hero-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.img-hero {
+	width: 100%;
+	margin: 2rem auto;
+}
+
+.about-container p {
+	text-align: center;
+}
+
+h3 {
+	margin-top: 1.5em;
+	margin-bottom: 0.5em;
+}
+
+.location-table tr,
+td,
+th {
+	padding: 0.5em;
+	text-align: center;
+	border: 2px solid black;
+}
+
+.location-table th {
+	font-size: clamp(1em, 3vw, 1.5em);
+	font-weight: 700;
+}
+
+footer p {
+	width: 100%;
+	text-align: center;
+}
