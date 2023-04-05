@@ -49,7 +49,7 @@ function LocationData(
 		}
 		this.calcCookiesEachHour = function () {
 			for (let i = 0; i < hours.length; i++) {
-				let oneHour = parseInt(this.customersEachHour[i] * this.avgCookieSale);
+				let oneHour = Math.ceil(this.customersEachHour[i] * this.avgCookieSale);
 				this.cookiesEachHour.push(oneHour);
 				// this.totalDailyCookies = this.totalDailyCookies + oneHour;
 				this.totalDailyCookies += oneHour;
