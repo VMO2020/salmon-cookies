@@ -236,27 +236,12 @@ function tableBody2() {
 function render() {
 	// TABLE 1
 	tableHead();
-	tableRows(seattle);
-	seattle.calcCustomersEachHour();
-	seattle.calcCookiesEachHour();
-	// console.log(seattle.customersEachHour);
-	// console.log(seattle.totalDailyCookies);
 
-	tableRows(tokyo);
-	tokyo.calcCustomersEachHour();
-	tokyo.calcCookiesEachHour();
-
-	tableRows(dubai);
-	dubai.calcCustomersEachHour();
-	dubai.calcCookiesEachHour();
-
-	tableRows(paris);
-	paris.calcCustomersEachHour();
-	paris.calcCookiesEachHour();
-
-	tableRows(lima);
-	lima.calcCustomersEachHour();
-	lima.calcCookiesEachHour();
+	for (let i = 0; i < locations.length; i++) {
+		tableRows(locations[i]);
+		locations[i].calcCustomersEachHour();
+		locations[i].calcCookiesEachHour();
+	}
 
 	// TABLE 2
 	tableHead2();
