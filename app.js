@@ -20,7 +20,7 @@ const hours = [
 
 // Random function
 function randomNum(min, max) {
-	return Math.floor(Math.random() * (max - min + 1) + min);
+	return Math.ceil(Math.random() * (max - min + 1) + min);
 }
 
 // Locations Data
@@ -43,7 +43,8 @@ const seattle = {
 		for (let i = 0; i < hours.length; i++) {
 			let oneHour = parseInt(this.customersEachHour[i] * this.avgCookieSale);
 			this.cookiesEachHour.push(oneHour);
-			this.totalDailyCookies = this.totalDailyCookies + oneHour;
+			// this.totalDailyCookies = this.totalDailyCookies + oneHour;
+			this.totalDailyCookies += oneHour;
 		}
 	},
 };
@@ -65,7 +66,7 @@ const tokyo = {
 		for (let i = 0; i < hours.length; i++) {
 			let oneHour = parseInt(this.customersEachHour[i] * this.avgCookieSale);
 			this.cookiesEachHour.push(oneHour);
-			this.totalDailyCookies = this.totalDailyCookies + oneHour;
+			this.totalDailyCookies += oneHour;
 		}
 	},
 };
@@ -87,7 +88,7 @@ const dubai = {
 		for (let i = 0; i < hours.length; i++) {
 			let oneHour = parseInt(this.customersEachHour[i] * this.avgCookieSale);
 			this.cookiesEachHour.push(oneHour);
-			this.totalDailyCookies = this.totalDailyCookies + oneHour;
+			this.totalDailyCookies += oneHour;
 		}
 	},
 };
@@ -109,7 +110,7 @@ const paris = {
 		for (let i = 0; i < hours.length; i++) {
 			let oneHour = parseInt(this.customersEachHour[i] * this.avgCookieSale);
 			this.cookiesEachHour.push(oneHour);
-			this.totalDailyCookies = this.totalDailyCookies + oneHour;
+			this.totalDailyCookies += oneHour;
 		}
 	},
 };
@@ -131,7 +132,7 @@ const lima = {
 		for (let i = 0; i < hours.length; i++) {
 			let oneHour = parseInt(this.customersEachHour[i] * this.avgCookieSale);
 			this.cookiesEachHour.push(oneHour);
-			this.totalDailyCookies = this.totalDailyCookies + oneHour;
+			this.totalDailyCookies += oneHour;
 		}
 	},
 };
