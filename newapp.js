@@ -1,7 +1,7 @@
 'use strict';
 // console.log('Javascript is working!')
 
-// ************************ Data ************************
+// ********************************* Data *********************************
 const hours = [
 	'6am',
 	'7am',
@@ -17,6 +17,11 @@ const hours = [
 	'5pm',
 	'6pm',
 	'7pm',
+	'8pm',
+];
+
+const traffic = [
+	0.5, 0.75, 1.0, 0.6, 0.8, 1.0, 0.7, 0.4, 0.6, 0.9, 0.7, 0.5, 0.3, 0.4, 0.6,
 ];
 
 // *************************** Random function ***************************
@@ -25,7 +30,7 @@ function randomNum(min, max) {
 }
 
 // ************************  Constructor function ************************
-function LocationData(
+function locationData(
 	location,
 	minCustomer,
 	maxCustomer,
@@ -37,6 +42,7 @@ function LocationData(
 	this.maxCustomer = maxCustomer;
 	this.avgCookieSale = avgCookieSale;
 	this.customersEachHour = [];
+	this.customersEachHourScaled = [];
 	this.cookiesEachHour = [];
 	this.totalDailyCookies = 0;
 	this.reqCookieTossers = [];
@@ -45,11 +51,19 @@ function LocationData(
 		for (let i = 0; i < hours.length; i++) {
 			let costumer = randomNum(this.minCustomer, this.maxCustomer);
 			this.customersEachHour.push(costumer);
+			// Scaled using Traffic array
+			let costumerScaled = Math.ceil(costumer * traffic[i]);
+			this.customersEachHourScaled.push(costumerScaled);
+
 			// console.log(this.customersEachHour);
+			// console.log(this.customersEachHourScaled);
 		}
 		this.calcCookiesEachHour = function () {
 			for (let i = 0; i < hours.length; i++) {
-				let oneHour = Math.ceil(this.customersEachHour[i] * this.avgCookieSale);
+				// let oneHour = Math.ceil(this.customersEachHour[i] * this.avgCookieSale);
+				let oneHour = Math.ceil(
+					this.customersEachHourScaled[i] * this.avgCookieSale
+				);
 				this.cookiesEachHour.push(oneHour);
 				// this.totalDailyCookies = this.totalDailyCookies + oneHour;
 				this.totalDailyCookies += oneHour;
@@ -75,11 +89,11 @@ function LocationData(
 	// console.log(this.reqCookieTossers);
 }
 
-const seattle = new LocationData('Seattle', 23, 65, 6.3);
-const tokyo = new LocationData('Tokyo', 3, 24, 1.2);
-const dubai = new LocationData('Dubai', 11, 38, 3.7);
-const paris = new LocationData('Paris', 20, 38, 4.6);
-const lima = new LocationData('Lima', 2, 16, 4.6);
+const seattle = new locationData('Seattle', 23, 65, 6.3);
+const tokyo = new locationData('Tokyo', 3, 24, 1.2);
+const dubai = new locationData('Dubai', 11, 38, 3.7);
+const paris = new locationData('Paris', 20, 38, 4.6);
+const lima = new locationData('Lima', 2, 16, 4.6);
 
 const locations = [seattle, tokyo, dubai, paris, lima];
 
@@ -137,6 +151,7 @@ function tableRows() {
 // Head
 const tableHeadTitle2 = document.getElementById('hours-table-head');
 const emptyCell = document.createElement('th');
+emptyCell.textContent = 'Hour';
 
 function tableHead2() {
 	tableHeadTitle2.appendChild(emptyCell); // Empty cell
@@ -189,6 +204,7 @@ function tableFoot2() {
 // Head
 const tableHeadTitle3 = document.getElementById('tossers-table-head');
 const emptyCell2 = document.createElement('th');
+emptyCell2.textContent = 'Hour';
 
 function tableHead3() {
 	tableHeadTitle3.appendChild(emptyCell2); // Empty cell
