@@ -65,7 +65,8 @@ h1.title {
 }
 
 h3 {
-	font-size: clamp(1.4rem, 4vw, 2.2rem);
+	font-size: clamp(1.2rem, 2.8vw, 2.2rem);
+	font-weight: 700;
 }
 
 .img-hero-container {
@@ -103,7 +104,8 @@ th {
 	border: 2px solid rgb(174, 56, 42);
 }
 
-#hours-table-head th {
+#hours-table-head th,
+#tossers-table-head th {
 	font-size: clamp(0.93em, 3vw, 1.5em);
 	font-weight: 700;
 	color: white;
@@ -111,7 +113,8 @@ th {
 	border: 2px solid rgb(174, 56, 42);
 }
 
-#hours-table-foot {
+#hours-table-foot,
+#tossers-table-foot {
 	font-weight: 700;
 }
 

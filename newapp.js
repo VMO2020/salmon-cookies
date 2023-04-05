@@ -39,6 +39,8 @@ function LocationData(
 	this.customersEachHour = [];
 	this.cookiesEachHour = [];
 	this.totalDailyCookies = 0;
+	this.reqCookieTossers = [];
+	this.minCookieTossers = 2;
 	this.calcCustomersEachHour = function () {
 		for (let i = 0; i < hours.length; i++) {
 			let costumer = randomNum(this.minCustomer, this.maxCustomer);
@@ -53,9 +55,24 @@ function LocationData(
 				this.totalDailyCookies += oneHour;
 			}
 		};
+		this.calcCookieTossers = function () {
+			for (let i = 0; i < hours.length; i++) {
+				let reqCookieT = Math.ceil(this.customersEachHour[i] / 20);
+				if (reqCookieT <= 2) {
+					reqCookieT = 2;
+				}
+				this.reqCookieTossers.push(reqCookieT);
+				if (reqCookieT > this.minCookieTossers) {
+					this.minCookieTossers = reqCookieT;
+				}
+			}
+		};
 	};
 	this.calcCustomersEachHour();
 	this.calcCookiesEachHour();
+	this.calcCookieTossers();
+	// console.log(this.customersEachHour);
+	// console.log(this.reqCookieTossers);
 }
 
 const seattle = new LocationData('Seattle', 23, 65, 6.3);
@@ -168,6 +185,58 @@ function tableFoot2() {
 	}
 }
 
+// ****************************** TABLE 3 ******************************
+// Head
+const tableHeadTitle3 = document.getElementById('tossers-table-head');
+const emptyCell2 = document.createElement('th');
+
+function tableHead3() {
+	tableHeadTitle3.appendChild(emptyCell2); // Empty cell
+	for (let i = 0; i < locations.length; i++) {
+		const titleName = document.createElement('th');
+		titleName.textContent = locations[i].location;
+		tableHeadTitle3.appendChild(titleName);
+	}
+}
+
+// Body
+const tableBodyItems3 = document.getElementById('tossers-table-body');
+
+function tableBody3() {
+	for (let i = 0; i < hours.length; i++) {
+		const row = document.createElement('tr');
+		// console.log(hours[i]);
+		const hourCell = document.createElement('td');
+		hourCell.textContent = hours[i];
+		row.appendChild(hourCell);
+
+		// Create cells with maxCustomer data for each location
+		for (let j = 0; j < locations.length; j++) {
+			const cookiesEachHourCell = document.createElement('td');
+			// console.log(i, j);
+			// console.log(locations[j].cookiesEachHour[i]);
+			cookiesEachHourCell.textContent = locations[j].reqCookieTossers[i];
+			row.appendChild(cookiesEachHourCell);
+		}
+
+		tableBodyItems3.appendChild(row);
+	}
+}
+
+// Foot
+const tableFootTitle3 = document.getElementById('tossers-table-foot');
+const totalCell3 = document.createElement('td');
+totalCell3.textContent = 'Tossers:';
+
+function tableFoot3() {
+	tableFootTitle3.appendChild(totalCell3); // Total cell
+	for (let i = 0; i < locations.length; i++) {
+		const titleName = document.createElement('th');
+		titleName.textContent = locations[i].minCookieTossers;
+		tableFootTitle3.appendChild(titleName);
+	}
+}
+
 // ****************************** RENDER *******************************
 function render() {
 	// TABLE 1
@@ -178,6 +247,11 @@ function render() {
 	tableHead2();
 	tableBody2();
 	tableFoot2();
+
+	// TABLE3
+	tableHead3();
+	tableBody3();
+	tableFoot3();
 }
 
 render();
