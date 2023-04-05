@@ -1,4 +1,5 @@
-// console.log('Javascript is working!');
+'use strict';
+// console.log('Javascript is working!')
 
 // Data
 const hours = [
