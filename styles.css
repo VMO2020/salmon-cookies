@@ -111,6 +111,14 @@ th {
 	border: 2px solid rgb(174, 56, 42);
 }
 
+#hours-table-foot {
+	font-weight: 700;
+}
+
+footer {
+	margin-top: 2rem;
+}
+
 footer p {
 	width: 100%;
 	text-align: center;
