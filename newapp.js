@@ -133,7 +133,7 @@ function tableRows() {
 	}
 }
 
-// ****************************** TABLE 2 ******************************
+// ****************************** TABLE 2 *******************************
 // Head
 const tableHeadTitle2 = document.getElementById('hours-table-head');
 const emptyCell = document.createElement('th');
