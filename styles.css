@@ -10,8 +10,6 @@
 }
 
 html {
-	min-width: 320px;
-	max-width: 1024px;
 	font-family: 'Roboto', sans-serif;
 	font-size: 1rem; /* 16px */
 	font-weight: 400;
@@ -19,10 +17,14 @@ html {
 	letter-spacing: 0.01em;
 	margin: 0 auto;
 	scroll-behavior: smooth;
+	background-color: var(--html);
 }
 
 body {
+	min-width: 320px;
+	max-width: 1400px;
 	width: 100%;
+	margin: 0 auto;
 }
 
 .header-container,
