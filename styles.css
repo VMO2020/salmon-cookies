@@ -1,3 +1,14 @@
+/* Variables */
+:root {
+	--main: rgb(227, 79, 63);
+	--main-border: rgb(174, 56, 42);
+	--dark: black;
+	--light: white;
+	--table: grey;
+	--alert: orange;
+	--html: rgb(28, 28, 28);
+}
+
 html {
 	min-width: 320px;
 	max-width: 1024px;
@@ -18,8 +29,8 @@ body {
 .footer-container {
 	width: 100%;
 	padding: 0.7em;
-	color: white;
-	background-color: rgb(227, 79, 63);
+	color: var(--light);
+	background-color: var(--main);
 	max-height: 5svh;
 	display: flex;
 	justify-content: space-between;
@@ -27,8 +38,8 @@ body {
 }
 
 .logo img {
-	width: 5em;
-	background-color: aliceblue;
+	width: clamp(5rem, 7vw, 15rem);
+	background-color: var(--light);
 	padding: 0.1em 0.5em;
 	border-radius: 0.5em;
 }
@@ -40,8 +51,9 @@ body {
 	margin: 0 1em;
 }
 
-.nav-container ul li a {
-	font-size: clamp(1rem, 3vw, 1.5rem);
+.nav-container ul li a,
+#dark {
+	font-size: clamp(1rem, 2.2vw, 2rem);
 	cursor: pointer;
 }
 
@@ -53,8 +65,8 @@ body {
 	width: 100%;
 	min-height: 90svh;
 	padding: 0.7em;
-	color: black;
-	background-color: white;
+	color: var(--dark);
+	background-color: var(--light);
 }
 
 h1.title {
@@ -62,6 +74,7 @@ h1.title {
 	font-size: clamp(1.8rem, 5vw, 3rem);
 	font-weight: 700;
 	margin-top: 1.8rem;
+	margin-bottom: 1rem;
 }
 
 h3 {
@@ -76,6 +89,11 @@ h4 {
 	margin-bottom: 1em;
 }
 
+#colors,
+label {
+	font-size: clamp(1em, 3vw, 1.5em);
+}
+
 .img-hero-container {
 	display: flex;
 	justify-content: center;
@@ -86,33 +104,58 @@ h4 {
 	margin: 2rem auto;
 }
 
+.img-gallery {
+	width: 30%;
+	margin: 0.3rem auto;
+}
+
+.gallery-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-bottom: 2rem;
+}
+
 .about-container p {
+	font-size: clamp(1em, 3vw, 1.5em);
 	text-align: center;
 }
 
 .location-table tr,
+.tossers-table,
 td,
 th {
 	padding: 0.5em;
 	text-align: center;
-	border: 2px solid rgba(0, 0, 0, 0.412);
+	border: 2px solid var(--table);
 }
 
 .location-table th {
 	font-size: clamp(1em, 3vw, 1.5em);
 	font-weight: 700;
-	color: white;
-	background-color: rgb(227, 79, 63);
-	border: 2px solid rgb(174, 56, 42);
+	color: var(--light);
+	background-color: var(--main);
 }
 
+.tossers-table {
+	margin-bottom: 2rem;
+}
+
+#table-head th,
 #hours-table-head th,
 #tossers-table-head th {
-	font-size: clamp(0.93em, 3vw, 1.5em);
+	font-size: clamp(0.93em, 2.2vw, 2em);
 	font-weight: 700;
-	color: white;
-	background-color: rgb(227, 79, 63);
-	border: 2px solid rgb(174, 56, 42);
+	color: var(--light);
+	background-color: var(--main);
+	border: 2px solid var(--main-border);
+}
+
+table tr td,
+table tr td,
+table tr td {
+	font-size: clamp(0.93em, 2.2vw, 2em);
 }
 
 #hours-table-foot,
@@ -120,11 +163,28 @@ th {
 	font-weight: 700;
 }
 
-footer {
-	margin-top: 2rem;
+.footer-container {
+	font-size: clamp(0.93em, 3vw, 1.5em);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	width: 100%;
+	color: var(--light);
+	padding: 0.3em;
+	min-height: 9em;
 }
 
-footer p {
+.footer-container .line-one {
+	display: flex;
+	justify-content: center;
+}
+
+.footer-container .line-one p,
+.footer-container .line-two p {
+	text-align: center;
+	width: auto;
+}
+.footer-container .line-three a {
 	width: 100%;
 	text-align: center;
 }
