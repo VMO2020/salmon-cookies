@@ -151,4 +151,10 @@ a {
 	display: inline-block;
 	text-decoration: none;
 	color: inherit;
+	cursor: pointer;
+}
+
+button {
+	padding: 1em 2em;
+	cursor: pointer;
 }
