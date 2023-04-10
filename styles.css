@@ -74,6 +74,7 @@ h1.title {
 	font-size: clamp(1.8rem, 5vw, 3rem);
 	font-weight: 700;
 	margin-top: 1.8rem;
+	margin-bottom: 1rem;
 }
 
 h3 {
@@ -88,6 +89,11 @@ h4 {
 	margin-bottom: 1em;
 }
 
+#colors,
+label {
+	font-size: clamp(1em, 3vw, 1.5em);
+}
+
 .img-hero-container {
 	display: flex;
 	justify-content: center;
@@ -95,7 +101,6 @@ h4 {
 }
 .img-hero {
 	width: 100%;
-	max-height: 40vh;
 	margin: 2rem auto;
 }
 
@@ -113,6 +118,7 @@ h4 {
 }
 
 .about-container p {
+	font-size: clamp(1em, 3vw, 1.5em);
 	text-align: center;
 }
 
