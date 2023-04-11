@@ -29,7 +29,7 @@
 	<body>
 		<header class="header-container">
 			<span class="logo">
-				<img src="./images/salmon.png" alt="salmon logo" />
+				<img src="./images/salmon.png" alt="" />
 			</span>
 			<nav class="nav-container">
 				<ul>
@@ -42,7 +42,7 @@
 			</nav>
 		</header>
 		<main class="main-container">
-			<h1 class="title">Salmon Cookies - Sales</h1>
+			<h1 class="title">Order Processing</h1>
 
 			<label for="colors"
 				>Choose a color:
@@ -54,74 +54,22 @@
 					<option value="#cba258">gold</option>
 				</select>
 			</label>
-
-			<!-- Table 1 -->
-			<table class="location-table">
-				<h3>Pat’s estimates table:</h3>
-				<thead>
-					<tr id="table-head"></tr>
-				</thead>
-				<tbody id="table-body"></tbody>
-				<tfoot>
-					<tr id="table-foot"></tr>
-				</tfoot>
-			</table>
-			<!-- Add New Store -->
-			<form id="new-store-form">
-				<h3>Create A New Cookie Store:</h3>
-				<fieldset>
-					<legend></legend>
-
-					<label for="name-input"
-						>Store Name:
-						<input type="text" id="name-input" name="name" />
-					</label>
-
-					<label for="min-cust-input"
-						>min Customer:
-						<input type="number" id="min-cust-input" name="minCust" min="1"
-					/></label>
-
-					<label for="max-cust-input"
-						>max Customer:
-						<input type="number" id="max-cust-input" name="maxCust"
-					/></label>
-
-					<label for="aveinput"
-						>Average Cookies Sold:
-						<input type="number" id="avg-cookies-input" name="avgCookies"
-					/></label>
-					<div class="buttons-container">
-						<button id="submit-button" type="submit">Submit</button>
-						<button id="reset-button" type="reset">Reset</button>
-					</div>
-				</fieldset>
-			</form>
-			<!-- Table 2 -->
-			<table class="hours-table">
-				<h3>Amounts of cookies purchased:</h3>
-				<h4>(Adjusted for projected hourly customer traffic)</h4>
-				<thead>
-					<tr id="hours-table-head"></tr>
-				</thead>
-
-				<tbody id="hours-table-body"></tbody>
-				<tfoot>
-					<tr id="hours-table-foot"></tr>
-				</tfoot>
-			</table>
-			<!-- Table 3 -->
-			<table class="tossers-table">
-				<h3>Salmon Cookie Tossers Required:</h3>
-				<thead>
-					<tr id="tossers-table-head"></tr>
-				</thead>
-
-				<tbody id="tossers-table-body"></tbody>
-				<tfoot>
-					<tr id="tossers-table-foot"></tr>
-				</tfoot>
-			</table>
+			<section>
+				<table class="orders-container">
+					<tr>
+						<th>ORDER#</th>
+						<th>Description</th>
+						<th>Quantity</th>
+						<th>Customer Id</th>
+					</tr>
+					<tr>
+						<td>12345</td>
+						<td>Cookies Special</td>
+						<td>20</td>
+						<td>Tim099</td>
+					</tr>
+				</table>
+			</section>
 		</main>
 		<footer class="footer-container">
 			<din class="line-one">
@@ -138,7 +86,6 @@
 			</div>
 		</footer>
 		<!-- <script src="app.js"></script> -->
-		<script src="newapp.js"></script>
 		<script src="dark.js"></script>
 	</body>
 </html>

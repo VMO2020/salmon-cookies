@@ -52,7 +52,7 @@ body {
 }
 
 .nav-container ul li {
-	margin: 0 1em;
+	margin: 0 0.5em;
 }
 
 .nav-container ul li a,
@@ -95,7 +95,7 @@ h4 {
 
 #colors,
 label {
-	font-size: clamp(1em, 3vw, 1.5em);
+	font-size: clamp(1em, 1.6vw, 1.5em);
 }
 
 /* Images */
@@ -168,15 +168,52 @@ table tr td {
 
 #hours-table-foot,
 #tossers-table-foot {
+	font-size: clamp(0.93em, 2.2vw, 2em);
 	font-weight: 700;
-}
-
-tr:nth-child(even) {
-	background-color: var(--table-strip);
 }
 
 tr:hover {
 	background-color: var(--coral);
+}
+
+.orders-container {
+	margin-top: 4em;
+}
+
+/* Form */
+
+#new-store-form,
+#order-form {
+	margin: 2rem auto;
+	padding: 1em;
+	border: 2px solid var(--table);
+}
+
+#new-store-form h3,
+#order-form h3 {
+	margin: 0;
+	margin-bottom: 1em;
+}
+
+#new-store-form fieldset,
+#order-form fieldset {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+#new-store-form fieldset label,
+#order-form fieldset label {
+	font-size: clamp(0.93em, 2.2vw, 2em);
+	margin: 0.3em 0;
+}
+#new-store-form fieldset .buttons-container {
+	margin: 1em auto;
+}
+
+#order-form fieldset p {
+	margin: 0.8em 0;
 }
 
 /* Footers */

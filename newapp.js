@@ -95,9 +95,10 @@ const dubai = new locationData('Dubai', 11, 38, 3.7);
 const paris = new locationData('Paris', 20, 38, 4.6);
 const lima = new locationData('Lima', 2, 16, 4.6);
 
-const locations = [seattle, tokyo, dubai, paris, lima];
+let locations = [seattle, tokyo, dubai, paris, lima];
 
 // ******************************  TABLE 1 ******************************
+
 const tableTitles = [
 	'Location',
 	'Min / Cust',
@@ -146,6 +147,66 @@ function tableRows() {
 		row.appendChild(child4);
 	}
 }
+
+function tableOneRow(loc) {
+	// console.log(loc);
+
+	// Rows
+	const row = document.createElement('tr');
+	table.appendChild(row);
+
+	// Column1
+	const child1 = document.createElement('td');
+	child1.textContent = loc[0];
+	row.appendChild(child1);
+
+	// Column2
+	const child2 = document.createElement('td');
+	child2.textContent = loc[1];
+	row.appendChild(child2);
+
+	// Column3
+	const child3 = document.createElement('td');
+	child3.textContent = loc[2];
+	row.appendChild(child3);
+
+	// Column4
+	const child4 = document.createElement('td');
+	child4.textContent = loc[3];
+	row.appendChild(child4);
+}
+
+// *************************** FORM TABLE 1 ****************************
+// Selectors
+const submitButton = document.getElementById('new-store-form');
+
+// Listener & function
+submitButton.addEventListener('submit', function (event) {
+	event.preventDefault(); // Stope refresh page`
+
+	const location = event.target.name.value;
+	// console.log(location);
+	const minCustomer = event.target.minCust.value;
+	// console.log(minCustomer);
+	const maxCustomer = event.target.maxCust.value;
+	// console.log(maxCustomer);
+	const avgCookieSale = event.target.avgCookies.value;
+	// console.log(avgCookieSale);
+
+	// console.log(event.target);
+
+	const newStore = new locationData(
+		location,
+		minCustomer,
+		maxCustomer,
+		avgCookieSale
+	);
+	// console.log(newStore);
+
+	const loc = [location, minCustomer, maxCustomer, avgCookieSale];
+
+	tableOneRow(loc);
+});
 
 // ****************************** TABLE 2 *******************************
 // Head
