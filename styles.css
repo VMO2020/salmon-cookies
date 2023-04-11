@@ -33,7 +33,7 @@ body {
 	padding: 0.7em;
 	color: var(--light);
 	background-color: var(--main);
-	max-height: 5svh;
+	max-height: 8svh;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
