@@ -2,9 +2,11 @@
 :root {
 	--main: rgb(227, 79, 63);
 	--main-border: rgb(174, 56, 42);
+	--coral: coral;
 	--dark: black;
 	--light: white;
 	--table: grey;
+	--table-strip: #f2f2f2;
 	--alert: orange;
 	--html: rgb(28, 28, 28);
 }
@@ -96,6 +98,8 @@ label {
 	font-size: clamp(1em, 3vw, 1.5em);
 }
 
+/* Images */
+
 .img-hero-container {
 	display: flex;
 	justify-content: center;
@@ -123,6 +127,8 @@ label {
 	font-size: clamp(1em, 3vw, 1.5em);
 	text-align: center;
 }
+
+/* Tables */
 
 .location-table tr,
 .tossers-table,
@@ -165,6 +171,15 @@ table tr td {
 	font-weight: 700;
 }
 
+tr:nth-child(even) {
+	background-color: var(--table-strip);
+}
+
+tr:hover {
+	background-color: var(--coral);
+}
+
+/* Footers */
 .footer-container {
 	font-size: clamp(0.93em, 3vw, 1.5em);
 	display: flex;
