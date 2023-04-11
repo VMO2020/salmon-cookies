@@ -176,41 +176,10 @@ function tableOneRow(loc) {
 	row.appendChild(child4);
 }
 
-// *************************** FORM TABLE 1 ****************************
-// Selectors
-const submitButton = document.getElementById('new-store-form');
-
-// Listener & function
-submitButton.addEventListener('submit', function (event) {
-	event.preventDefault(); // Stope refresh page`
-
-	const location = event.target.name.value;
-	// console.log(location);
-	const minCustomer = event.target.minCust.value;
-	// console.log(minCustomer);
-	const maxCustomer = event.target.maxCust.value;
-	// console.log(maxCustomer);
-	const avgCookieSale = event.target.avgCookies.value;
-	// console.log(avgCookieSale);
-
-	// console.log(event.target);
-
-	const newStore = new locationData(
-		location,
-		minCustomer,
-		maxCustomer,
-		avgCookieSale
-	);
-	// console.log(newStore);
-
-	const loc = [location, minCustomer, maxCustomer, avgCookieSale];
-
-	tableOneRow(loc);
-});
-
 // ****************************** TABLE 2 *******************************
 // Head
 const tableHeadTitle2 = document.getElementById('hours-table-head');
+
 const emptyCell = document.createElement('th');
 emptyCell.textContent = 'Hour';
 
@@ -249,6 +218,7 @@ function tableBody2() {
 
 // Foot
 const tableFootTitle2 = document.getElementById('hours-table-foot');
+
 const totalCell = document.createElement('td');
 totalCell.textContent = 'Cookies:';
 
@@ -332,3 +302,63 @@ function render() {
 }
 
 render();
+
+// *************************** FORM TABLE 1 ****************************
+// Selectors
+const submitButton = document.getElementById('new-store-form');
+
+// Listener & function
+submitButton.addEventListener('submit', function (event) {
+	event.preventDefault(); // Stope refresh page`
+
+	const location = event.target.name.value;
+	// console.log(location);
+	const minCustomer = event.target.minCust.value;
+	// console.log(minCustomer);
+	const maxCustomer = event.target.maxCust.value;
+	// console.log(maxCustomer);
+	const avgCookieSale = event.target.avgCookies.value;
+	// console.log(avgCookieSale);
+
+	// console.log(event.target);
+
+	// const lima = new locationData('Lima', 2, 16, 4.6);
+
+	const newStore = new locationData(
+		location,
+		minCustomer,
+		maxCustomer,
+		avgCookieSale
+	);
+	// console.log(newStore);
+
+	const loc = [location, minCustomer, maxCustomer, avgCookieSale];
+
+	locations.push(newStore);
+	console.log(locations);
+
+	const lastLocation = locations[locations.length - 1];
+	// console.log(lastLocation);
+
+	tableOneRow(loc);
+
+	// TABLE 2
+	// Clear content of table head title, body & foot title
+	tableHeadTitle2.innerHTML = '';
+	tableBodyItems2.innerHTML = '';
+	tableFootTitle2.innerHTML = '';
+	// re-render
+	tableHead2();
+	tableBody2();
+	tableFoot2();
+
+	// TABLE3
+	// Clear content of table head title, body & foot title
+	tableHeadTitle3.innerHTML = '';
+	tableBodyItems3.innerHTML = '';
+	tableFootTitle3.innerHTML = '';
+	// re-render
+	tableHead3();
+	tableBody3();
+	tableFoot3();
+});
