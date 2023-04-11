@@ -7,12 +7,16 @@ let flag = true;
 const darkButton = document.querySelector('#dark');
 const mainContainer = document.querySelector('.main-container');
 const logo = document.querySelector('.logo img');
+const header = document.querySelector('.header-container');
+const footer = document.querySelector('.footer-container');
+const colorSelector = document.querySelector('#colors');
 
 // Content
 darkButton.textContent = '🌙';
 
 // Listener
 darkButton.addEventListener('click', darkMode);
+colorSelector.addEventListener('change', changeColor);
 
 // Function
 function darkMode() {
@@ -29,4 +33,11 @@ function darkMode() {
 		mainContainer.style.color = 'black';
 	}
 	flag = !flag;
+}
+
+function changeColor() {
+	const color = document.querySelector('#colors').value;
+	// console.log(color);
+	header.style.backgroundColor = color;
+	footer.style.backgroundColor = color;
 }
