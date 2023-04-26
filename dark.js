@@ -14,7 +14,7 @@ const colorSelector = document.querySelector('#colors');
 // Content
 darkButton.textContent = '🌙';
 
-// Listener
+// eventListener
 darkButton.addEventListener('click', darkMode);
 colorSelector.addEventListener('change', changeColor);
 
